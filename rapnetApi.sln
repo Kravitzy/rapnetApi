@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rapnetApi", "rapnetApi\rapnetApi.csproj", "{CFA02516-C632-4E54-BB20-A1F57F8DA6CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA02516-C632-4E54-BB20-A1F57F8DA6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA02516-C632-4E54-BB20-A1F57F8DA6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA02516-C632-4E54-BB20-A1F57F8DA6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA02516-C632-4E54-BB20-A1F57F8DA6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3DEA43D-0D44-4807-B59A-AC99D1B6AC61}
+	EndGlobalSection
+EndGlobal
