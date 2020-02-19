@@ -79,6 +79,8 @@ namespace rapnetApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Diamond>> PostDiamond(Diamond diamond)
         {
+            Random rnd = new Random();
+            diamond.Id = rnd.Next(6, 99999999);
             _context.Diamonds.Add(diamond);
             try
             {
