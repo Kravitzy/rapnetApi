@@ -27,6 +27,13 @@ namespace rapnetApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DatabaseContext>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
             services.AddControllers();
         }
 
@@ -37,6 +44,8 @@ namespace rapnetApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
 

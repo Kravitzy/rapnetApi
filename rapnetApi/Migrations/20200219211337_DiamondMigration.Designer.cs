@@ -8,8 +8,8 @@ using rapnetApi.Models;
 namespace rapnetApi.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200218161137_DiamondsMigration")]
-    partial class DiamondsMigration
+    [Migration("20200219211337_DiamondMigration")]
+    partial class DiamondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,9 @@ namespace rapnetApi.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Shape")
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("Size")
                         .HasColumnType("TEXT");
 
@@ -49,6 +52,7 @@ namespace rapnetApi.Migrations
                             Color = "D",
                             ListPrice = 18000m,
                             Price = 15000m,
+                            Shape = "Round",
                             Size = 1.02m
                         },
                         new
@@ -58,6 +62,7 @@ namespace rapnetApi.Migrations
                             Color = "E",
                             ListPrice = 21000m,
                             Price = 20000m,
+                            Shape = "Pear",
                             Size = 1.5m
                         },
                         new
@@ -67,6 +72,7 @@ namespace rapnetApi.Migrations
                             Color = "G",
                             ListPrice = 10000m,
                             Price = 12000m,
+                            Shape = "Emerald",
                             Size = 0.95m
                         },
                         new
@@ -76,6 +82,7 @@ namespace rapnetApi.Migrations
                             Color = "F",
                             ListPrice = 55000m,
                             Price = 50000m,
+                            Shape = "Round",
                             Size = 2.15m
                         },
                         new
@@ -85,6 +92,7 @@ namespace rapnetApi.Migrations
                             Color = "D",
                             ListPrice = 3000m,
                             Price = 2000m,
+                            Shape = "Emerald",
                             Size = 0.5m
                         },
                         new
@@ -94,6 +102,7 @@ namespace rapnetApi.Migrations
                             Color = "G",
                             ListPrice = 12000m,
                             Price = 15000m,
+                            Shape = "Pear",
                             Size = 1.2m
                         });
                 });
