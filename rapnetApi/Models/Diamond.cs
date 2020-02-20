@@ -13,7 +13,7 @@ namespace rapnetApi.Models
         public string Clarity { get; set; }
         public decimal Price { get; set; }
         public decimal ListPrice { get; set; }
-        public decimal Id { get; set; }
+        public int Id { get; set; }
 
     }
 }
