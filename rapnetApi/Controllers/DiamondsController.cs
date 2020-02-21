@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using rapnetApi.BLL;
 using rapnetApi.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace rapnetApi.Controllers
 {
@@ -68,66 +66,66 @@ namespace rapnetApi.Controllers
 
 
         // GET: api/Diamonds/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Diamond>> GetDiamond(decimal id)
-        //{
-        //    var diamond = await _context.Diamonds.FindAsync(id);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Diamond>> GetDiamond(decimal id)
+        {
+            var diamond = await _context.Diamonds.FindAsync(id);
 
-        //    if (diamond == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (diamond == null)
+            {
+                return NotFound();
+            }
 
-        //    return diamond;
-        //}
+            return diamond;
+        }
 
         // PUT: api/Diamonds/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutDiamond(decimal id, Diamond diamond)
-        //{
-        //    if (id != diamond.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutDiamond(decimal id, Diamond diamond)
+        {
+            if (id != diamond.Id)
+            {
+                return BadRequest();
+            }
 
-        //    _context.Entry(diamond).State = EntityState.Modified;
+            _context.Entry(diamond).State = EntityState.Modified;
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!DiamondExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!DiamondExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
         // DELETE: api/Diamonds/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Diamond>> DeleteDiamond(decimal id)
-        //{
-        //    var diamond = await _context.Diamonds.FindAsync(id);
-        //    if (diamond == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Diamond>> DeleteDiamond(decimal id)
+        {
+            var diamond = await _context.Diamonds.FindAsync(id);
+            if (diamond == null)
+            {
+                return NotFound();
+            }
 
-        //    _context.Diamonds.Remove(diamond);
-        //    await _context.SaveChangesAsync();
+            _context.Diamonds.Remove(diamond);
+            await _context.SaveChangesAsync();
 
-        //    return diamond;
-        //}
+            return diamond;
+        }
 
         private bool DiamondExists(decimal id)
         {
